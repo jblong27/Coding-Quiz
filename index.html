@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz!</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="container">
         <div id="start">
             <h1>Coding Quiz!</h1>
             <h2>This quiz will test your knowledge of basic Javascript fundamentals.</h2>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg" id="start-btn">Start Quiz</button>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg" id="high-scores" onclick="showScorepage()">High Scores</button>
         </div>
-        <button type="button" class="btn btn-primary btn-lg">Start Quiz</button>
-        <button type="button" class="btn btn-primary btn-lg">High Scores</button>
         <div id="codequiz">
-            <div id="timer">Time Left: </div>
+            <div id="timer"></div>
             <div id="questions"></div>
-                <button id="a1"></button>
-                <button id="a2"></button>
-                <button id="a3"></button>
-                <button id="a4"></button>
+                <button type="button" class="btn btn-outline-primary" id="a1" onclick="checkAnswer('a')"></button>
+                <button type="button" class="btn btn-outline-primary" id="a2" onclick="checkAnswer('b')"></button>
+                <button type="button" class="btn btn-outline-primary" id="a3" onclick="checkAnswer('c')"></button>
+                <button type="button" class="btn btn-outline-primary" id="a4" onclick="checkAnswer('d')"></button>
             <div id="result"></div>
         </div>
         <div id="endpage">
@@ -30,25 +33,36 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter initials here" id="input"/>
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                  </div>
+                    <button class="btn btn-outline-secondary" type="button" id="submit">Submit</button>
+                </div>
             </div>
         </div>
-        <div id="scoreContainer" class="container">
-            <div id="boardHeader" class="row">
-                <div id="lbH1" class="col-md-6"><h2>Player Initials</h2></div>
-                <div id="lbH2" class="col-md-6"><h2>Player Score</h2></div>
+        <!--This contains the scoreboard-->
+        <div id="scorePage">
+        <div id="scoreContainer">
+            <div id="boardHeader">
+                <div id="lbH1"><h2>Player Initials</h2></div>
+                <div id="lbH2"><h2>Player Score</h2></div>
             </div>
-            <div id="leaderBoard" class="row">
-                <div id="scores" class="col-mid-6"></div>
-                <div id="initials" class="col-mid-6"></div>
+            <br>
+            <!--Scores and initials will be stored here-->
+            <div id="leaderBoard">
+                <div id="initials"></div>
+                <div id="scores"></div>
             </div>
-            
+        </div>
+        <div id="endpage-btns">
+            <button class = "btn btn-primary btn-lg" id="restart">Try again!</button>
+            <br>
+            <button class="btn btn-primary btn-lg" id="clearscores">Clear Scores</button>
         </div>
     </div>
+
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
