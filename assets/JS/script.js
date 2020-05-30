@@ -101,7 +101,6 @@ function startQuiz() {
     }, 1000);
     codequizEl.style.display = "block";
 }
-    // need to take time off the clock for an incorrect answer
 
 // display score
 function showScore() {
@@ -186,7 +185,9 @@ function checkAnswer(answer) {
         currentQuestionIndex++;
         generateQuestion();
     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
+        // need to take time off the clock for an incorrect answer
         alert("Incorrect!");
+        timeLeft = timeLeft - 15;
         currentQuestionIndex++;
         generateQuestion();
     }   else {

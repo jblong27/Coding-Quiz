@@ -1,11 +1,11 @@
 * {
     font-family: 'Open Sans', sans-serif;
-};
+}
 li {
     padding-bottom: 3px;
-    color: white;
-    text-shadow: 1.5px 1px 3px black;
     list-style-type: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
 }
 
 p {
@@ -17,7 +17,7 @@ input{
 }
 
 .container {
-width: 100vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,7 +33,6 @@ button {
     width: 200px;
     margin-top: 3px;
     }
-
 
 #start{
     display: flex;
@@ -105,4 +104,8 @@ button {
 
 #clearscores{
     margin-left: 30px;
+}
+
+#leaderBoard {
+    list-style: none;
 }
